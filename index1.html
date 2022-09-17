@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/stylesheet/index1.css">
+    <title>eyes movement</title>
+</head>
+
+<body>
+
+    <main id="main">
+
+        <div class="bigbox">
+            <div class="eye">
+                <div class="ball"></div>
+            </div>
+            <div class="eye">
+                <div class="ball"></div>
+            </div>
+        </div>
+
+    </main>
+
+    
+
+
+
+    <script>
+
+        let ball1 = document.getElementsByClassName('ball')[0]
+        let ball2 = document.getElementsByClassName('ball')[1]
+
+        let main = document.getElementById('main')
+        main.addEventListener('mousemove',function(e){
+            let x = e.clientX*100/window.innerWidth +'%'
+            console.log(x)
+            let y = e.clientY*100/window.innerHeight +'%'
+            ball1.style.left=x 
+            ball2.style.left=x 
+            ball1.style.top=y 
+            ball2.style.top=y 
+
+
+            ball1.style.transform='translate(-'+x+',-'+y+')'
+            ball2.style.transform='translate(-'+x+',-'+y+')'
+
+
+        })
+
+    </script>
+
+</body>
+
+</html>
